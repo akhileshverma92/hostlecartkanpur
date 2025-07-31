@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const loginRoutes = require('./routes/authRoutes');
+const signupUser = require('./routes/authRoutes')
 
 dotenv.config();
 
@@ -13,7 +14,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api', loginRoutes);
-
+app.use('/api', signupUser)
 // Connect DB and start server
 const PORT = process.env.PORT || 5000;
 
